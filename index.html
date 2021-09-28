@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manchester-City</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <ul id="nav" onclick="slowScroll('#top')">
+            <li><a href="index.html" class="active" >HOME</a></li>
+            <li>
+                <a href="matches.html">MATCHES</a>
+                <ul>
+                    <li><a href="current.html">Current matches</a></li>
+                    <li><a href="future.html">Future matches</a></li>
+                </ul>
+            </li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="fans.html">FANS</a></li>
+            <li><a href="contacts.html">CONTACTS</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+    </nav>
+<!--    <div id="logo" onclick="slowScroll('#top')">-->
+<!--        <span>Manchester City</span>-->
+<!--    </div>-->
+<!--    <div id="about">-->
+<!--        <a href="#" title="Main" onclick="slowScroll('#main')">Main</a>-->
+<!--        <a href="#" onclick="slowScroll('#matches')" title="Matches">Matches</a>-->
+<!--        <a href="#" onclick="slowScroll('#contacts')" title="Contacts">Contacts</a>-->
+<!--        <a href="#" onclick="slowScroll('#history')" title="History">History</a>-->
+<!--        <a href="#" onclick="slowScroll('#support')" title="Support">Support</a>-->
+<!--    </div>-->
+<!--    <div class="burger">-->
+<!--        <div class="line line1"></div>-->
+<!--        <div class="line line2"></div>-->
+<!--        <div class="line line3"></div>-->
+<!--    </div>div-->
+</header>
+
+<div id="top">
+    <h1>Manchester City!</h1>
+    <h3></h3>
+    <h3>This is official site of the main football club!</h3>
+
+</div>
+
+<div id="main">
+    <div class="intro">
+        <h2>You will see all the info about our club.</h2>
+        <span></span>
+    </div>
+    <div class="text">
+        <h2>Tap on the link if you want to see Team Comporison including a couch.</h2>
+    </div>
+</div>
+
+<div id="overview">
+    <h2>The best options!</h2>
+    <h4>Become a real fan of your team!</h4>
+
+    <div class="img">
+        <img src="/images/LastMatches.png" alt="">
+        <span>Our results of lasts matches</span>
+    </div>
+    <div class="img">
+        <img src="/images/EtihadStadium.jpg" alt="">
+        <span>Our favourite "Etihad Stadium"</span>
+    </div>
+</div>
+
+<div id="contacts">
+    <h5>You can say something to the our manager writing over here</h5>
+    <form id="form_input">
+        <label for="name">Name<span>*</span></label><br>
+        <input type="text" placeholder="Put your name here"="name" id="name"><br>
+        <label for="email">Email<span>*</span></label><br>
+        <input type="email" placeholder="Put your email-address here" name="email" id="email"><br>
+        <label for="message">Message<span>*</span></label><br>
+        <textarea placeholder="What do you want to tell us?" name="message" id="message"></textarea><br>
+        <div id="mess_send" class="btn">Send message</div>
+    </form>
+</div>
+
+<div id="History">
+    <div>
+        <span class="title">History</span><br>
+        <span class="heading"></span>
+        <p> </p>
+    </div>
+
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed");
+    });
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', nav)
+    function nav(){
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.main-nav');
+        burger.addEventListener('click', ()=>{
+            nav.classList.toggle('show')
+        })
+    }
+</script>
+
+</body>
+</html>
